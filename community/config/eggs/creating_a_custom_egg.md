@@ -200,4 +200,4 @@ The default variables are always accessible to all eggs and don't have to be cre
 | SERVER_PORT               | Primary Server Port                         | `27015`                                                        |
 | P_SERVER_LOCATION         | Location of the server                      | `Example City`                                                 |
 | P_SERVER_UUID             | UUID of the server                          | `539fdca8-4a08-4551-a8d2-8ee5475b50d9`                         |
-| P_SERVER_ALLOCATION_LIMIT | Limit of allocations allowed for the server | `0`                                                            |
+| P_SERVER_ALLOCATION_LIMIT | Limit of allocations allowed for the server | `0`  apt update |
