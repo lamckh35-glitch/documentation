@@ -81,4 +81,19 @@ Restart MySQL/MariaDB to apply these changes. This will override the default MyS
 
 If your Database and Wings are on the same machine and won't need external access, you can also use the `docker0` interface IP address rather than `127.0.0.1`. This IP address can be found by running `ip addr | grep docker0`, and it likely looks like `172.x.x.x`.
 
-Starting with MySQL 8.0.13 / MariaDB 10.11 or above, `bind_address` now also accepts a comma-separated list of interfaces to give more control over what interfaces it will listen on and which not.
+Starting with MySQL 8.0.13 / MariaDB 10.11 or above, `bind_address` now also accepts a comma-separated list of interfaces to give more control over what interfaces it will listen on and which not.# If using MariaDB (v11.0.0+)
+mariadb -u root -p
+
+# If using MySQL
+mysql -u root -p
+![19268c201742359 Y3JvcCwyNDAwLDE4NzcsMCw0ODc](https://github.com/user-attachments/assets/3d66568f-4fcd-4822-a7c9-4263b0288d9b) # Remember to change 'somePassword' below to be a unique password specific to this account.
+CREATE USER 'pterodactyl'@'127.0.0.1' IDENTIFIED BY 'somePassword';
+CREATE DATABASE panel;GRANT ALL PRIVILEGES ON panel.* TO 'pterodactyl'@'127.0.0.1';
+# You should change the username and password below to something unique.
+CREATE USER 'pterodactyluser'@'127.0.0.1' IDENTIFIED BY 'somepassword';GRANT ALL PRIVILEGES ON *.* TO 'pterodactyluser'@'127.0.0.1' WITH GRANT OPTION;
+[mysqld]
+bind-address=0.0.0.0
+
+
+
+
